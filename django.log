@@ -1,0 +1,12 @@
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.000) SELECT `school_config`.`id`, `school_config`.`amount`, `school_config`.`some_other_field` FROM `school_config` WHERE `school_config`.`id` = 1 LIMIT 21; args=(1,); alias=default
+(0.000) INSERT INTO `school_config` (`id`, `amount`, `some_other_field`) VALUES (1, 100, 'default_value'); args=[1, Decimal('100'), 'default_value']; alias=default
+(0.000) UPDATE `school_config` SET `amount` = 100, `some_other_field` = 'default_value' WHERE `school_config`.`id` = 1; args=(Decimal('100'), 'default_value', 1); alias=default
